@@ -1,0 +1,122 @@
+					<!DOCTYPE HTML>
+					<html>
+						<head>
+							<title>Formation</title>
+							<meta charset="utf-8" />
+							<meta name="viewport" content="width=device-width, initial-scale=1" />
+					
+						</head>
+						<body>
+					
+							
+							<% row.forEach(function(item, index){ %>
+								<section id="banner">
+									<div class="inner">
+										<h1>Formation : <br>
+											<a href="#"><%= item.formation %></a></h1>										
+									</div>
+									<p>© Bouchra</p>
+								</section>
+								<% }); %>
+					
+								<style>
+								@media screen and (max-width: 480px) {
+							
+									html, body {
+										min-width: 320px;
+									}
+							
+								}
+							
+								body {
+									background: #ffb142;
+								}
+							
+							
+								body {
+									background-color: #ffb142;
+									color: #444;
+								}
+							
+								body, input, select, textarea {
+									font-family: "Lato", Arial, Helvetica, sans-serif;
+									font-size: 16pt;
+									font-weight: 300;
+									line-height: 1.75;
+								}
+							
+									@media screen and (max-width: 1680px) {
+							
+										body, input, select, textarea {
+											font-size: 13pt;
+										}
+							
+									}
+							
+									@media screen and (max-width: 1280px) {
+							
+										body, input, select, textarea {
+											font-size: 12pt;
+										}
+							
+									}
+							
+								body {
+									padding-top: 4.125em;
+								}
+								
+							
+									#header .logo {
+										display: inline-block;
+										height: inherit;
+										left: 1.25em;
+										line-height: inherit;
+										margin: 0;
+										padding: 0;
+										position: absolute;
+										top: 0;
+										color: #fff;
+										font-size: 1.25em;
+										text-decoration: none;
+									}
+								@media screen and (max-width: 480px) {
+							
+								}
+							
+								#banner {
+									background-color: #273c75;
+									color: rgba(255, 255, 255, 0.75);
+									text-align: center;
+									cursor: default;
+									padding: 10em 4em 9em 4em;
+									height: 330px;
+									width: 40%;
+									border-radius: 6%;
+									margin-left: 25%;
+									font-weight: bolder;
+									
+								}
+							
+							
+									#banner a {
+										color: #fff;
+									}
+							
+									#banner h1 {
+										font-size: 3em;
+										line-height: 1.45;
+										margin: 0 0 0.75em 0;
+									}
+							
+							p {
+								margin-top: 36%;
+								margin-left: 70%;
+								color: black;
+								font-weight: bolder;
+							}
+							
+							
+							</style>
+
+						</body>
+					</html>

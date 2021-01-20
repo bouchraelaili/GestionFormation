@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="576.0" prefWidth="985.0" stylesheets="@../css/application.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.DashboardController">
+   <children>
+      <Pane id="panDash" prefHeight="576.0" prefWidth="266.0" stylesheets="@../css/application.css" />
+      <Pane fx:id="panelAcceuill" layoutX="265.0" layoutY="28.0" prefHeight="547.0" prefWidth="720.0" style="-fx-background-color: gray;" stylesheets="@../css/application.css">
+         <children>
+            <ImageView id="imgAdmin" fitHeight="150.0" fitWidth="248.0" layoutX="273.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/Admin.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane fx:id="panelSession" layoutX="265.0" layoutY="28.0" prefHeight="547.0" prefWidth="720.0" style="-fx-background-color: gray;">
+         <children>
+            <TableView id="employerGrid" layoutX="78.0" layoutY="103.0" prefHeight="200.0" prefWidth="587.0" stylesheets="@../css/application.css">
+               <columns>
+                  <TableColumn prefWidth="201.0" text="Code Session" />
+                  <TableColumn prefWidth="189.0" text="Libellé" />
+                  <TableColumn prefWidth="196.0" text="Formation" />
+               </columns>
+            </TableView>
+            <Label alignment="TOP_CENTER" layoutX="157.0" layoutY="54.0" prefHeight="18.0" prefWidth="407.0" styleClass="labelTitle" stylesheets="@../css/application.css" text="La Liste des Sessions">
+               <font>
+                  <Font name="Broadway" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="206.0" layoutY="334.0" prefHeight="24.0" prefWidth="154.0" styleClass="inptLab" stylesheets="@../css/application.css" text="Code Session :" />
+            <TextField layoutX="382.0" layoutY="333.0" prefHeight="27.0" prefWidth="131.0" styleClass="inptText" stylesheets="@../css/application.css" />
+            <Label layoutX="206.0" layoutY="383.0" prefHeight="24.0" prefWidth="154.0" styleClass="inptLab" stylesheets="@../css/application.css" text="Libellé  :" />
+            <TextField layoutX="381.0" layoutY="382.0" prefHeight="27.0" prefWidth="131.0" styleClass="inptText" stylesheets="@../css/application.css" />
+            <Label layoutX="206.0" layoutY="437.0" prefHeight="24.0" prefWidth="154.0" styleClass="inptLab" stylesheets="@../css/application.css" text="Formation :" />
+            <TextField layoutX="381.0" layoutY="436.0" prefHeight="27.0" prefWidth="131.0" styleClass="inptText" stylesheets="@../css/application.css" />
+            <Button layoutX="125.0" layoutY="492.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="95.0" styleClass="crudBtn" stylesheets="@../css/application.css" text="Ajouter">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="257.0" layoutY="492.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="95.0" styleClass="crudBtn" stylesheets="@../css/application.css" text="Modifier">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="399.0" layoutY="492.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="95.0" styleClass="crudBtn" stylesheets="@../css/application.css" text="Supprimer">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="538.0" layoutY="492.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="95.0" styleClass="crudBtn" stylesheets="@../css/application.css" text="Vider">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="panelFormation" layoutX="265.0" layoutY="29.0" prefHeight="547.0" prefWidth="720.0" style="-fx-background-color: gray;">
+         <children>
+            <TableView id="employerGrid" fx:id="formationList" layoutX="78.0" layoutY="103.0" prefHeight="200.0" prefWidth="587.0" stylesheets="@../css/application.css">
+               <columns>
+                  <TableColumn fx:id="codeFormation" prefWidth="201.0" text="Code Formation" />
+                  <TableColumn fx:id="libelleFormation" prefWidth="189.0" text="Libellé" />
+                  <TableColumn fx:id="descFormation" prefWidth="196.0" text="Description" />
+               </columns>
+            </TableView>
+            <Label alignment="TOP_CENTER" layoutX="157.0" layoutY="54.0" prefHeight="18.0" prefWidth="407.0" styleClass="labelTitle" stylesheets="@../css/application.css" text="La Liste des Formations">
+               <font>
+                  <Font name="Broadway" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="206.0" layoutY="334.0" prefHeight="24.0" prefWidth="154.0" styleClass="inptLab" stylesheets="@../css/application.css" text="Code Formation :" />
+            <TextField fx:id="txtCodeFor" layoutX="382.0" layoutY="333.0" prefHeight="27.0" prefWidth="131.0" styleClass="inptText" stylesheets="@../css/application.css" />
+            <Label layoutX="206.0" layoutY="383.0" prefHeight="24.0" prefWidth="154.0" styleClass="inptLab" stylesheets="@../css/application.css" text="Libellé  :" />
+            <TextField fx:id="txtLibelFor" layoutX="381.0" layoutY="382.0" prefHeight="27.0" prefWidth="131.0" styleClass="inptText" stylesheets="@../css/application.css" />
+            <Label layoutX="206.0" layoutY="437.0" prefHeight="24.0" prefWidth="154.0" styleClass="inptLab" stylesheets="@../css/application.css" text="Description :" />
+            <TextField fx:id="txtDescFor" layoutX="381.0" layoutY="436.0" prefHeight="27.0" prefWidth="131.0" styleClass="inptText" stylesheets="@../css/application.css" />
+            <Button fx:id="btnAjoutFor" layoutX="125.0" layoutY="492.0" mnemonicParsing="false" onAction="#insertFormation" prefHeight="39.0" prefWidth="95.0" styleClass="crudBtn" stylesheets="@../css/application.css" text="Ajouter">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnMdifiFor" layoutX="257.0" layoutY="492.0" mnemonicParsing="false" onAction="#updateFormation" prefHeight="39.0" prefWidth="95.0" styleClass="crudBtn" stylesheets="@../css/application.css" text="Modifier">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="399.0" layoutY="492.0" mnemonicParsing="false" onAction="#deleteFormation" prefHeight="39.0" prefWidth="95.0" styleClass="crudBtn" stylesheets="@../css/application.css" text="Supprimer">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Button>
+            <Button layoutX="538.0" layoutY="492.0" mnemonicParsing="false" onAction="#viderChampsFormation" prefHeight="39.0" prefWidth="95.0" styleClass="crudBtn" stylesheets="@../css/application.css" text="Vider">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="panelEmployer" layoutX="1.0" layoutY="1.0" prefHeight="576.0" prefWidth="985.0" style="-fx-background-color: #ffb142;">
+         <children>
+            <Group />
+            <Label alignment="TOP_CENTER" layoutX="266.0" layoutY="14.0" prefHeight="18.0" prefWidth="407.0" styleClass="labelTitle" stylesheets="@../css/application.css" text="La Liste des Formations" textFill="#120975">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="26.0" />
+               </font>
+            </Label>
+            <AnchorPane />
+            <Label layoutX="82.0" layoutY="418.0" styleClass="inptLab" stylesheets="@../css/application.css" text="description" />
+            <Label layoutX="84.0" layoutY="321.0" prefHeight="30.0" prefWidth="60.0" styleClass="inptLab" stylesheets="@../css/application.css" text="code" />
+            <Label layoutX="82.0" layoutY="367.0" prefHeight="30.0" prefWidth="83.0" styleClass="inptLab" stylesheets="@../css/application.css" text="libellé" />
+            <TextField fx:id="matriculeEmp" layoutX="182.0" layoutY="414.0" styleClass="inptText" stylesheets="@../css/application.css" />
+            <TextField fx:id="nomEmp" layoutX="182.0" layoutY="323.0" styleClass="inptText" stylesheets="@../css/application.css" />
+            <TextField fx:id="prenomEmp" layoutX="182.0" layoutY="369.0" styleClass="inptText" stylesheets="@../css/application.css" />
+            <Button fx:id="btnUpdEmp" layoutX="764.0" layoutY="373.0" mnemonicParsing="false" onAction="#updateEmployer" prefHeight="44.0" prefWidth="131.0" style="-fx-background-color: #249475;" styleClass="crudBtn" stylesheets="@../css/application.css" text="Modifier" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button fx:id="btnSuppEmp" layoutX="761.0" layoutY="435.0" mnemonicParsing="false" onAction="#deleteEmployer" prefHeight="44.0" prefWidth="137.0" style="-fx-background-color: #273c75;" styleClass="crudBtn" stylesheets="@../css/application.css" text="Supprimer" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <SepiaTone />
+               </effect>
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font></Button>
+            <Button fx:id="btnVideEmp" layoutX="762.0" layoutY="491.0" mnemonicParsing="false" onAction="#viderChampsEmployer" prefHeight="44.0" prefWidth="137.0" style="-fx-background-color: #273c75;" styleClass="crudBtn" stylesheets="@../css/application.css" text="Vider" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Glow />
+               </effect>
+               <font>
+                  <Font size="18.0" />
+               </font></Button>
+            <TableView id="employerGrid" fx:id="employerList" layoutX="182.0" layoutY="76.0" prefHeight="200.0" prefWidth="593.0" stylesheets="@../css/application.css">
+               <columns>
+                  <TableColumn fx:id="matricueCell" prefWidth="146.0" text="Matricule" />
+                  <TableColumn fx:id="nomCell" prefWidth="101.00003051757812" text="Nom" />
+                  <TableColumn fx:id="prenomCell" prefWidth="110.0" text="Prenom" />
+                  <TableColumn fx:id="loginCell" prefWidth="117.0" text="Login" />
+                  <TableColumn fx:id="villeCell" prefWidth="116.0" text="Ville" />
+               </columns>
+            </TableView>
+            <Button fx:id="btnUpdEmp1" layoutX="766.0" layoutY="301.0" mnemonicParsing="false" onAction="#updateEmployer" prefHeight="39.0" prefWidth="137.0" style="-fx-background-color: #273c75;" styleClass="crudBtn" stylesheets="@../css/application.css" text="Ajouter" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+            </Button>
+            <Button layoutX="26.0" layoutY="526.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="89.0" style="-fx-background-color: #34495e;" text="Employes" textFill="WHITE" />
+            <Button layoutX="144.0" layoutY="526.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: #34495e;" text="Session" textFill="WHITE" />
+            <Button layoutX="281.0" layoutY="527.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: #34495e;" text="Formation" textFill="WHITE" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
